@@ -8,13 +8,17 @@
 StatusType SenderDataRead(float* Temperature, float* StateOfCharge)
 {
 StatusType Ret = E_NOT_OK;
-  /*
-  ..
-  Ret = E_OK;
-  */
-  Ret = E_OK;
-   UNUSED(Temperature);
-   UNUSED(StateOfCharge);
+    float Temp, SOC;
+    FILE * file= fopen("./Sender/SenderData.txt","r");  
+    if (file!=NULL) {
+        for(int i=0;fscanf(file, "%f\t%f\n", &Temp,&SOC)!=EOF ;i++)
+        {
+            Temperature[i] = Temp;
+            StateOfCharge[i]  = SOC;
+        }
+      Ret = E_OK;
+    }
+    fclose(file); 
   return Ret;
   
 }
