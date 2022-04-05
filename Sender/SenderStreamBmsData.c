@@ -3,6 +3,8 @@
 #include <math.h>
 #include <stdlib.h>
 
+# define UNUSED(x) x
+
 StatusType SenderDataRead(float* Temperature, float* StateOfCharge)
 {
 StatusType Ret = E_NOT_OK;
@@ -10,6 +12,9 @@ StatusType Ret = E_NOT_OK;
   ..
   Ret = E_OK;
   */
+  Ret = E_OK;
+   UNUSED(Temperature);
+   UNUSED(StateOfCharge);
   return Ret;
   
 }
@@ -18,7 +23,7 @@ void SendDataToConsole(float Temperature[], float StateOfCharge[])
 {
     for(int index = 0; index < NUMBER_OF_MAX_DATA; index++)
     {
-     printf("Temperature  %f and StateOfCharge  %f\n",Temperature[i],StateOfCharge[i]);
+     printf("Temperature  %f and StateOfCharge  %f\n",Temperature[index],StateOfCharge[index]);
     }
 }
 
