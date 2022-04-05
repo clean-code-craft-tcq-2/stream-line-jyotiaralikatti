@@ -1,32 +1,3 @@
-
-Pull requests
-Issues
-Marketplace
-Explore
-@jyotiaralikatti
-clean-code-craft-tcq-2 /
-tdd-buckets-jyotiaralikatti
-Public
-generated from clean-code-craft-tcq-1/test-driven-ranges
-
-Code
-Issues
-Pull requests 1
-Actions
-Projects
-Wiki
-Security
-Insights
-
-    Settings
-
-tdd-buckets-jyotiaralikatti/.github/workflows/main-workflow.yml
-@jyotiaralikatti
-jyotiaralikatti Create main-workflow.yml
-Latest commit b1371e7 28 days ago
-History
-1 contributor
-32 lines (23 sloc) 691 Bytes
 name: Build and Run
 
 on: [push, pull_request]
