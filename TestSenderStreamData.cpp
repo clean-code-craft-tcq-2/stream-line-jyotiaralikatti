@@ -19,3 +19,22 @@ SCENARIO("Read the Sender datas for Temperature and StateofCharge from file")
         }
     }
 }
+
+SCENARIO("Verify whether Read input from the Sender data is correctly processed and output to console")
+{
+    GIVEN(" Read input from file SenderData.txt")
+    {
+        WHEN(" Have Input data in file")
+        {
+            float Temperature[NUMBER_OF_MAX_DATA] = {0}, expectedTemp = 24;
+            float StateOfCharge[NUMBER_OF_MAX_DATA] = {0}, expectedSOC = 90;
+            //StatusType status_check  = E_NOT_OK;
+            THEN("Check weather read of data from file is successful")
+            {
+               REQUIRE(SenderDataRead(Temperature,StateOfCharge) == E_OK);
+               REQUIRE(Temperature[0] == expectedTemp);
+               REQUIRE(StateOfCharge[0] == expectedSOC);
+            }
+        }
+    }
+}
