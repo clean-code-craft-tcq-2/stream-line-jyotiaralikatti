@@ -11,10 +11,10 @@ SCENARIO("Read the Sender datas for Temperature and StateofCharge from file")
         {
             float Temperature[NUMBER_OF_MAX_DATA] = {0};
             float StateOfCharge[NUMBER_OF_MAX_DATA] = {0};
-            //StatusType status_check  = E_NOT_OK;
+
             THEN("Check weather read of data from file is successful")
             {
-               REQUIRE(SenderDataRead(Temperature,StateOfCharge) == E_OK);
+               REQUIRE(SenderData_ReadBatteryParametrs(Temperature,StateOfCharge) == E_OK);
             }
         }
     }
@@ -28,10 +28,10 @@ SCENARIO("Verify whether Read input from the Sender data is correctly processed 
         {
             float Temperature[NUMBER_OF_MAX_DATA] = {0}, expectedTemp = 24;
             float StateOfCharge[NUMBER_OF_MAX_DATA] = {0}, expectedSOC = 90;
-            //StatusType status_check  = E_NOT_OK;
+
             THEN("Check weather read of data from file is successful")
             {
-               REQUIRE(SenderDataRead(Temperature,StateOfCharge) == E_OK);
+               REQUIRE(SenderData_ReadBatteryParametrs(Temperature,StateOfCharge) == E_OK);
                REQUIRE(Temperature[0] == expectedTemp);
                REQUIRE(StateOfCharge[0] == expectedSOC);
             }
