@@ -12,6 +12,6 @@ typedef enum
 	E_OK
 }StatusType;
 
-StatusType SenderDataRead(float* , float* );
+StatusType SenderData_ReadBatteryParametrs(float* , float* );
 void SendDataToConsole(float Temperature[], float StateOfCharge[]);
 StatusType BMS_Sender();
