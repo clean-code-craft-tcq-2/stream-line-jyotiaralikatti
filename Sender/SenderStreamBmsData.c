@@ -3,9 +3,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-# define UNUSED(x) x
-
-StatusType SenderDataRead(float* Temperature, float* StateOfCharge)
+StatusType SenderData_ReadBatteryParametrs(float* Temperature, float* StateOfCharge)
 {
 StatusType Ret = E_NOT_OK;
     float Temp, SOC;
@@ -36,7 +34,7 @@ StatusType BMS_Sender()
   float Temperature[NUMBER_OF_MAX_DATA]= {0}, StateOfCharge[NUMBER_OF_MAX_DATA] = {0};
   StatusType status_check = E_NOT_OK;
   
-  status_check = SenderDataRead( Temperature,StateOfCharge);
+  status_check = SenderData_ReadBatteryParametrs( Temperature,StateOfCharge);
   SendDataToConsole( Temperature,StateOfCharge);
   
   return status_check;
