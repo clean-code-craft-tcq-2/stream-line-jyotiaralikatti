@@ -2,7 +2,9 @@
 
 int receiveBmsDataFromConsole(){
   float input[5000];
-  scanf("%f",&input);
+  for(int i =0 , i<50,i++){
+    scanf("%f",input[i]);
+  }
   printf("%f, %f, %f, %f",input[0],input[1],input[2],input[3]);
   return 1;
 }
