@@ -1,20 +1,21 @@
 #include "ReceiverStreamBmsData.h"
 
 int receiveBmsDataFromConsole(){
-  string input;
+  char* input;
   scanf("%s",&input);
   printf("%s",&input);
   return 1;
 }
 
-char findMaxValueFromBmsConsole(char* inputArray){
+int findMaxValueFromBmsConsole(char* inputArray){
+  return 1;
 }
 
-char findMinValueFromBmsConsole(char* inputArray){
-  
+int findMinValueFromBmsConsole(char* inputArray){
+  return 1;
 }
-char findMovingAverageFromBmsData(char* inputArray){
-  
+int findMovingAverageFromBmsData(char* inputArray){
+  return 1;
 }
 
 void printToConsoleMinMaxAndMovingAverage(char min, char max, char movingAverage){
@@ -22,10 +23,10 @@ void printToConsoleMinMaxAndMovingAverage(char min, char max, char movingAverage
   cout << "Min Value is : " << min << " Max Value is : " << max <<" Moving Average is : " << movingAverage <<endl;
 }
 
-processReceivedBmsStreamData(){
+/*processReceivedBmsStreamData(){
   char *receiverBuffer = receiveBmsDataFromConsole();
   char max = findMaxValueFromBmsConsole(receiverBuffer);
   char min = findMinValueFromBmsConsole(receiverBuffer);
   char movingAverage = findMovingAverageFromBmsData(receiverBuffer);
   printToConsoleMinMaxAndMovingAverage(min, max,movingAverage);
-}
+*/
