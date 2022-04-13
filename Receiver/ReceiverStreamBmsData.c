@@ -8,10 +8,10 @@ int receiveBmsDataFromConsole(){
   
   char unusedData[300];
     for(int j = 0; j < 6; j++){
-        if(scanf("%50s", unusedData) == EOF) 
+       /* if(scanf("%50s", unusedData) == EOF) 
         {
             break;
-        } 
+        } */
         scanf("%f", &input1[j]);     
         scanf("%50s", unusedData);
         scanf("%50s", unusedData);
