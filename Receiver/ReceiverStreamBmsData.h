@@ -8,4 +8,5 @@
 using namespace std;
 #define MAX_BMS_READ 50
 
-int receiveBmsDataFromConsole();
+int receiveBmsDataFromConsole(float* Temperature, float* Soc);
+int processReceivedBmsStreamData();
