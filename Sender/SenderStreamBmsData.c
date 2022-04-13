@@ -25,7 +25,8 @@ void SendDataToConsole(float Temperature[], float StateOfCharge[])
 {
     for(int index = 0; index < NUMBER_OF_MAX_DATA; index++)
     {
-     printf("Temperature  %f and StateOfCharge  %f\n",Temperature[index],StateOfCharge[index]);
+     //printf("Temperature  %f and StateOfCharge  %f\n",Temperature[index],StateOfCharge[index]);
+       printf("%f, %f\n",Temperature[index],StateOfCharge[index]);
     }
 }
 
