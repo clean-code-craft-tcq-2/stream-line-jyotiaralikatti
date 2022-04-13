@@ -1,7 +1,7 @@
 #include "ReceiverStreamBmsData.h"
 
 int receiveBmsDataFromConsole(){
-  char* input;
+  char input[5000];
   scanf("%s",&input);
   printf("%s",&input);
   return 1;
