@@ -34,6 +34,7 @@ SCENARIO("Verify whether Read input from the Sender data is correctly processed 
                REQUIRE(SenderData_ReadBatteryParametrs(Temperature,StateOfCharge) == E_OK);
                REQUIRE(Temperature[0] == expectedTemp);
                REQUIRE(StateOfCharge[0] == expectedSOC);
+               REQUIRE(BMS_Sender() ==E_OK);
             }
         }
     }
