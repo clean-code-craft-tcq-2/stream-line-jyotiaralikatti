@@ -55,7 +55,7 @@ void printToConsoleMinMaxAndMovingAverage(float min, float max, int movingAverag
 
 int processReceivedBmsStreamData(){
   
-  int status = receiveBmsDataFromConsole(Temperature, Soc);
+  int status = receiveBmsDataFromConsole();
   float minTemp = findMinMaxValueTemperatureFromBmsSender(Temperature);
   float minSoc = findMinMaxValueSocFromBmsSender(Soc);
  // char movingAverage = findMovingAverageFromBmsData(receiverBuffer);
