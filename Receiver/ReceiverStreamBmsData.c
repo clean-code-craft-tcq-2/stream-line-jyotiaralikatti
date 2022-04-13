@@ -1,6 +1,9 @@
 #include "ReceiverStreamBmsData.h"
+float Temperature[300];
+float Soc[300];
 
-int receiveBmsDataFromConsole(float* Temperature, float* Soc){
+
+int receiveBmsDataFromConsole(){
   
   char dicardData[300];
   for(int bufferIndex = 0; bufferIndex < 6; bufferIndex++){
@@ -51,8 +54,7 @@ void printToConsoleMinMaxAndMovingAverage(float min, float max, int movingAverag
 }
 
 int processReceivedBmsStreamData(){
-  float Temperature[300];
-  float Soc[300];  
+  
   int status = receiveBmsDataFromConsole(Temperature, Soc);
   float minTemp = findMinMaxValueTemperatureFromBmsSender(Temperature);
   float minSoc = findMinMaxValueSocFromBmsSender(Soc);
