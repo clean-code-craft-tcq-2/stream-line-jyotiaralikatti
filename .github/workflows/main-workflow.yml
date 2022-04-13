@@ -18,13 +18,13 @@ jobs:
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testsender TestSenderStreamData.cpp ./Sender/*.c
       
     - name: run sender
-      run: ./testchecker
+      run: ./testsender
       
     - name: build receiver
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver testReceiverStreamData.cpp ./Receiver/ReceiverStreamBmsData.c
       
     - name: Pipeline sender/receiver
-      run: ./testchecker | ./testreceiver
+      run: ./testsender | ./testreceiver
       
     - name: run receiver
       run: ./testreceive
