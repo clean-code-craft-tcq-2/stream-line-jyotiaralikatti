@@ -4,9 +4,8 @@
 #include "Receiver/ReceiverStreamBmsData.h"
 
 TEST_CASE("Check whether sensor inputs are read from sender file") {
-  float Temperature[300];
-  float Soc[300];  
-  REQUIRE(receiveBmsDataFromConsole(Temperature,Soc) == 1);
+  
+  REQUIRE(receiveBmsDataFromConsole() == 1);
   
 }
 
