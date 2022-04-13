@@ -15,9 +15,8 @@ int receiveBmsDataFromConsole(){
         scanf("%f", &input1[j]);     
         scanf("%50s", unusedData);
         scanf("%50s", unusedData);
-        scanf("%50s", unusedData);
         scanf("%f", &input2[j]);
-        printf("%f, %f",input1[j],input2[j]);
+        printf("%f, %f\n",input1[j],input2[j]);
     }
   
   return 1;
