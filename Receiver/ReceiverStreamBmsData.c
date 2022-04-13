@@ -2,8 +2,8 @@
 
 int receiveBmsDataFromConsole(){
   char input[5000];
-  scanf("%s",&input);
-  printf("%c",input[0]);
+  scanf("%f",&input);
+  printf("%f",input[0]);
   return 1;
 }
 
