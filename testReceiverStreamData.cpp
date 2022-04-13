@@ -4,10 +4,12 @@
 #include "Receiver/ReceiverStreamBmsData.h"
 
 TEST_CASE("Check whether sensor inputs are read from sender file") {
-  REQUIRE(receiveBmsDataFromConsole() == 1);
+  float Temperature[300];
+  float Soc[300];  
+  REQUIRE(receiveBmsDataFromConsole(Temperature,Soc) == 1);
   
 }
 
-/*TEST_CASE("Process sensor input and output in CSV format") {
-  REQUIRE(processData() == E_OK);
-}*/
+TEST_CASE("Process sensor input and output in CSV format") {
+  REQUIRE(processReceivedBmsStreamData() == 1);
+}
