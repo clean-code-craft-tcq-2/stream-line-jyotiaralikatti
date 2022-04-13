@@ -3,7 +3,7 @@
 int receiveBmsDataFromConsole(){
   char input[5000];
   scanf("%f",&input);
-  printf("%f",input[0]);
+  printf("%f, %f, %f, %f",input[0],input[1],input[2],input[3]);
   return 1;
 }
 
