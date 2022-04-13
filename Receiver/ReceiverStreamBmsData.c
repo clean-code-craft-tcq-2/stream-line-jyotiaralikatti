@@ -1,9 +1,24 @@
 #include "ReceiverStreamBmsData.h"
 
 int receiveBmsDataFromConsole(){
-  float input[5000];
-  scanf("%f",&input);
-  printf("%f, %f, %f, %f",input[0],input[1],input[2],input[3]);
+  float input1[300];
+  float input2[300];
+  //scanf("%f",&input);
+  //printf("%f, %f, %f, %f",input[0],input[1],input[2],input[3]);
+  
+  char unusedData[300];
+    for(int j = 0; j < 6; j++){
+        if(scanf("%50s", unusedData) == EOF) 
+        {
+            break;
+        } 
+        scanf("%f", &input1[j]);     
+        scanf("%50s", unusedData);
+        scanf("%50s", unusedData);
+        scanf("%50s", unusedData);
+        scanf("%f", &input2[j]);
+    }
+  
   return 1;
 }
 
