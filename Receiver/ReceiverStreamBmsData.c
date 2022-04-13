@@ -6,7 +6,7 @@ int receiveBmsDataFromConsole(float* Temperature, float* Soc){
   for(int bufferIndex = 0; bufferIndex < 6; bufferIndex++){
     scanf("%f", &Temperature[bufferIndex]);     
     scanf("%50s", dicardData);
-    scanf("%f", &soc[bufferIndex]);
+    scanf("%f", &Soc[bufferIndex]);
     /*if(scanf("%50s", unusedData) == EOF) 
         {
             break;
@@ -29,7 +29,7 @@ static int intCompare(const void *previousBufferElement, const void *currentBuff
 }
  void MinMaxSortFunc(float* InputArray)
  {
-   qsort(inputArray, 50, sizeof(float), intCompare);
+   qsort(InputArray, 50, sizeof(float), intCompare);
  }
 
 float findMinMaxValueTemperatureFromBmsSender(float* inputArray){
