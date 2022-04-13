@@ -13,10 +13,10 @@ int receiveBmsDataFromConsole(){
         //scanf("%50s", unusedData);
         scanf("%50s", unusedData);
         scanf("%f", &input2[j]);
-      if(scanf("%50s", unusedData) == EOF) 
+      /*if(scanf("%50s", unusedData) == EOF) 
         {
             break;
-        } 
+        } */
         printf("%f, %f\n",input1[j],input2[j]);
     }
   
