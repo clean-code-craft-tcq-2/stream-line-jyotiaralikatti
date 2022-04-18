@@ -10,7 +10,7 @@ BMSParameters receiveBmsDataFromConsole(){
     cin >> temperature[bufferIndex] >> dicardData >> SOC[bufferIndex];   
     batteryParameters.Temperature[bufferIndex] = temperature[bufferIndex];
     batteryParameters.Soc[bufferIndex] = SOC[bufferIndex];     
-    printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
+    //printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
     }
   batteryParameters.status = 1;
   return batteryParameters;
@@ -30,6 +30,9 @@ int cmpfunc (const void * int_previousBufferElement, const void * int_currentBuf
 MinMaxSMAOutput findMinMaxValueTemperatureFromBmsSender(float* inputArray){
   MinMaxSMAOutput temperatureMinMaxSMAOutput;
   float* outputArray = MinMaxSortFunc(inputArray);
+  for(int i=0;i<50;i++){
+    cout<<outputArray[i]<<endl;
+  }
   temperatureMinMaxSMAOutput.min = outputArray[0];
   temperatureMinMaxSMAOutput.max = outputArray[49];
   return temperatureMinMaxSMAOutput;
