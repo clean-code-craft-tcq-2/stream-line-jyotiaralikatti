@@ -13,7 +13,7 @@ BMSParameters receiveBmsDataFromConsole(){
     //printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
     }
   
-   printf("%f, %f\n",batteryParameters.Temperature[0]);//,batteryParameters.Soc[0]);
+   printf("%f\n",batteryParameters.Temperature[0]);//,batteryParameters.Soc[0]);
   batteryParameters.status = 1;
   return batteryParameters;
 }
