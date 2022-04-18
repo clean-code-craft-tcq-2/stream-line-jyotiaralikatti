@@ -19,7 +19,5 @@ typedef struct BMSOutput{
   float SMA;
 }MinMaxSMAOutput;
 
-bool readSensorDataFromConsole();
-
 BMSParameters receiveBmsDataFromConsole();
 int processReceivedBmsStreamData();
