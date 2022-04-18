@@ -5,7 +5,7 @@ BMSParameters receiveBmsDataFromConsole(){
   
   char dicardData[300];
   BMSParameters batteryParameters;
-  for(int bufferIndex = 0; bufferIndex < 50; bufferIndex++){
+  for(int bufferIndex = 0; bufferIndex < 25; bufferIndex++){
     scanf("%f", &(batteryParameters.Temperature[bufferIndex]));     
     scanf("%50s", dicardData);
     scanf("%f", &(batteryParameters.Soc[bufferIndex]));
