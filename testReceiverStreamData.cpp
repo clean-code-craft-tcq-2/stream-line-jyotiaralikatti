@@ -5,7 +5,7 @@
 
 TEST_CASE("Check whether sensor inputs are read from sender file") {
   
-  REQUIRE(receiveBmsDataFromConsole() == 1);
+  REQUIRE((receiveBmsDataFromConsole().status) == 1);
   
 }
 
