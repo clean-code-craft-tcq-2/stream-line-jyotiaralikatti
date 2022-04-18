@@ -5,6 +5,7 @@
 #include <string.h>
 #include<array>
 #include <fstream>
+#include <algorithm>
 #include <vector>
 using namespace std;
 #define MAX_BMS_READ 50
