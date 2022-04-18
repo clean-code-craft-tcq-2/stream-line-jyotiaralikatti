@@ -26,7 +26,7 @@ int cmpfunc (const void * int_previousBufferElement, const void * int_currentBuf
 
  float* MinMaxSortFunc(float* InputArray)
  {
-   qsort(InputArray, 50, sizeof(float), cmpfunc);
+   qsort(InputArray, 6, sizeof(float), cmpfunc);
    return InputArray;
  }
 
