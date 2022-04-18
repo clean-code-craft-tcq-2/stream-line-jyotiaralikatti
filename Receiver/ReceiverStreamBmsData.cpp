@@ -5,9 +5,10 @@ bool readSensorDataFromConsole()
 {
   float temperature[200];
   float SOC[200];
+  char unwanted[200];
     for(int i = 0; i < 50; i++)
     {
-      cin >> temperature[i] >> SOC[i];
+      cin >> temperature[i] >> unwanted >> SOC[i];
       cout << temperature[i] <<SOC[i] <<endl;
     }
     
