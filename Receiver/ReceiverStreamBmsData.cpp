@@ -9,7 +9,7 @@ bool readSensorDataFromConsole()
     for(int i = 0; i < 50; i++)
     {
       cin >> temperature[i] >> unwanted >> SOC[i];
-      cout << temperature[i] <<SOC[i] <<endl;
+      cout << temperature[i] <<" " <<SOC[i] <<endl;
     }
     
     return true;
