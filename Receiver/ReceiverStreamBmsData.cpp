@@ -6,11 +6,11 @@ bool readSensorDataFromConsole()
   float temperature[200];
   float SOC[200];
   char unwanted[200];
-    for(int i = 0; i < 50; i++)
+    /*for(int i = 0; i < 50; i++)
     {
       cin >> temperature[i] >> unwanted >> SOC[i];
       cout << temperature[i] <<" " <<SOC[i] <<endl;
-    }
+    }*/
     
     return true;
 }
@@ -20,15 +20,15 @@ BMSParameters receiveBmsDataFromConsole(){
   char dicardData[300];
   BMSParameters batteryParameters;
   for(int bufferIndex = 0; bufferIndex < 24; bufferIndex++){
-    scanf("%f", &(batteryParameters.Temperature[bufferIndex]));     
-    scanf("%50s", dicardData);
-    scanf("%f", &(batteryParameters.Soc[bufferIndex]));
-    batteryParameters.status =1;
+    cin >> &(batteryParameters.Temperature[bufferIndex]) >> dicardData >> &(batteryParameters.Soc[bufferIndex]);     
+   // scanf("%50s", dicardData);
+   // scanf("%f", &(batteryParameters.Soc[bufferIndex]));
+    //batteryParameters.status = 1;
     /*if(scanf("%50s", unusedData) == EOF) 
         {
             break;
         } */
-   // printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
+    printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
     }
   
   return batteryParameters;
