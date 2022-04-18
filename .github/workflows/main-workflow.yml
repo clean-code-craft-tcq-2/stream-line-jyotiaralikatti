@@ -21,7 +21,7 @@ jobs:
       run: ./testsender
       
     - name: build receiver
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver testReceiverStreamData.cpp ./Receiver/ReceiverStreamBmsData.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver testReceiverStreamData.cpp ./Receiver/ReceiverStreamBmsData.cpp
       
     - name: Pipeline sender/receiver
       run: ./testsender | ./testreceiver
