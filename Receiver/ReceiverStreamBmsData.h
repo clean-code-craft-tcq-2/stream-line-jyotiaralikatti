@@ -23,3 +23,4 @@ typedef struct BMSOutput{
 
 BMSParameters receiveBmsDataFromConsole();
 int processReceivedBmsStreamData();
+float findMovingAverageFromBmsData(float* inputArray, int arraySize);
