@@ -60,7 +60,7 @@ int processReceivedBmsStreamData(){
   BMSParameters batterParam;
   
   batterParam = receiveBmsDataFromConsole();
-  float minTemp = findMinMaxValueTemperatureFromBmsSender(batterParam.Temperature);
+  float minTemp = findMinMaxValueTemperatureFromBmsSender(&(batterParam.Temperature));
   float minSoc = findMinMaxValueSocFromBmsSender(batterParam.Soc);
  // char movingAverage = findMovingAverageFromBmsData(receiverBuffer);
   printToConsoleMinMaxAndMovingAverage(minTemp, minSoc,1);
