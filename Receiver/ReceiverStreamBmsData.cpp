@@ -58,7 +58,7 @@ MinMaxSMAOutput findMinMaxValueSocFromBmsSender(float* inputArray){
 }
 
 
-void printToConsoleMinMaxAndMovingAverage(string parameter, float min, float max, int movingAverage){
+void printToConsoleMinMaxAndMovingAverage(string parameter, float min, float max, float movingAverage){
   
   cout << parameter << " Min Value is : " << min << " Max Value is : " << max <<" Moving Average is : " << movingAverage <<endl;
 }
