@@ -26,14 +26,14 @@ int cmpfunc (const void * int_previousBufferElement, const void * int_currentBuf
 
  float* MinMaxSortFunc(float* InputArray)
  {
-   qsort(InputArray, 25, sizeof(float), cmpfunc);
+   qsort(InputArray, 24, sizeof(float), cmpfunc);
    return InputArray;
  }
 
 float findMinMaxValueTemperatureFromBmsSender(float* inputArray){
   
   float* outputArray = MinMaxSortFunc(inputArray);
-  for(int i=0; i<6;i++){
+  for(int i=0; i<24;i++){
     printf("%f\n",outputArray[i]);
            }
   return outputArray[0];
