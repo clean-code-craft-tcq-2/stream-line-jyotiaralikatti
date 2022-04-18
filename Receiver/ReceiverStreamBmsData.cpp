@@ -1,6 +1,19 @@
 #include "ReceiverStreamBmsData.h"
 
 
+bool readSensorDataFromConsole()
+{
+  float temperature[200];
+  float SOC[200];
+    for(int i = 0; i < 50; i++)
+    {
+      cin >> temperature[i] >> SOC[i];
+      cout << temperature[i] <<SOC[i] <<endl;
+    }
+    
+    return true;
+}
+
 BMSParameters receiveBmsDataFromConsole(){
   
   char dicardData[300];
@@ -14,7 +27,7 @@ BMSParameters receiveBmsDataFromConsole(){
         {
             break;
         } */
-    printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
+   // printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
     }
   
   return batteryParameters;
