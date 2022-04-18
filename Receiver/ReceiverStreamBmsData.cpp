@@ -9,11 +9,12 @@ BMSParameters receiveBmsDataFromConsole(){
   for(int bufferIndex = 0; bufferIndex < 50; bufferIndex++){
     cin >> temperature >> dicardData >> SOC;   
     batteryParameters.Temperature[bufferIndex] = temperature;
-    batteryParameters.Soc[bufferIndex] = SOC;     
+    batteryParameters.Soc[bufferIndex] = SOC;   
+    printf("%f\n",temperature);//,batteryParameters.Soc[0]);
     //printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
     }
   
-   printf("%f\n",batteryParameters.Temperature[0]);//,batteryParameters.Soc[0]);
+   //printf("%f\n",batteryParameters.Temperature[0]);//,batteryParameters.Soc[0]);
   batteryParameters.status = 1;
   return batteryParameters;
 }
