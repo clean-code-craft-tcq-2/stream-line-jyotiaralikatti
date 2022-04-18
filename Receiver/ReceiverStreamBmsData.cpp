@@ -6,18 +6,10 @@ BMSParameters receiveBmsDataFromConsole(){
   BMSParameters batteryParameters;
   float temperature[200];
   float SOC[200];
-  //char unwanted[200];
   for(int bufferIndex = 0; bufferIndex < 50; bufferIndex++){
     cin >> temperature[bufferIndex] >> dicardData >> SOC[bufferIndex];   
     batteryParameters.Temperature[bufferIndex] = temperature[bufferIndex];
     batteryParameters.Soc[bufferIndex] = SOC[bufferIndex];     
-   // scanf("%50s", dicardData);
-   // scanf("%f", &(batteryParameters.Soc[bufferIndex]));
-    //batteryParameters.status = 1;
-    /*if(scanf("%50s", unusedData) == EOF) 
-        {
-            break;
-        } */
     printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
     }
   
@@ -30,7 +22,7 @@ int cmpfunc (const void * int_previousBufferElement, const void * int_currentBuf
 
  float* MinMaxSortFunc(float* InputArray)
  {
-   sort (InputArray, InputArray+48)
+   sort (InputArray, InputArray+48);
    //qsort(InputArray, 48, sizeof(float), cmpfunc);
    return InputArray;
  }
