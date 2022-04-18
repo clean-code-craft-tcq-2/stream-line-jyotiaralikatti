@@ -13,5 +13,11 @@ typedef struct BMSPara{
   int status;
 }BMSParameters;
 
+typedef struct BMSOutput{
+  float min;
+  float max;
+  float SMA;
+}MinMaxSMAOutput;
+
 BMSParameters receiveBmsDataFromConsole();
 int processReceivedBmsStreamData();
