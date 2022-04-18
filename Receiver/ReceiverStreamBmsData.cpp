@@ -4,13 +4,13 @@ BMSParameters receiveBmsDataFromConsole(){
   
   char dicardData[300];
   BMSParameters batteryParameters;
-  float temperature;
+  float temperature[50];
   float SOC;
   for(int bufferIndex = 0; bufferIndex < 50; bufferIndex++){
-    cin >> temperature >> dicardData >> SOC;   
-    batteryParameters.Temperature[bufferIndex] = temperature;
+    cin >> temperature[bufferIndex] >> dicardData >> SOC;   
+    batteryParameters.Temperature[bufferIndex] = temperature[bufferIndex];
     batteryParameters.Soc[bufferIndex] = SOC;   
-    printf("%f\n",temperature);//,batteryParameters.Soc[0]);
+    printf("temperature : %f\n",temperature[0]);//,batteryParameters.Soc[0]);
     //printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
     }
   
