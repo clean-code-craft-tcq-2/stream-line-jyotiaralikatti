@@ -6,7 +6,7 @@ BMSParameters receiveBmsDataFromConsole(){
   BMSParameters batteryParameters;
   float temperature;
   float SOC;
-  for(int bufferIndex = 0; bufferIndex < 25; bufferIndex++){
+  for(int bufferIndex = 0; bufferIndex < 50; bufferIndex++){
     cin >> temperature >> dicardData >> SOC;   
     batteryParameters.Temperature[bufferIndex] = temperature;
     batteryParameters.Soc[bufferIndex] = SOC;     
