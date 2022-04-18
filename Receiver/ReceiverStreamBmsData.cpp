@@ -23,7 +23,7 @@ int cmpfunc (const void * int_previousBufferElement, const void * int_currentBuf
  float* MinMaxSortFunc(float* InputArray)
  {
    //sort (InputArray, InputArray+50);
-   qsort(InputArray, 48, sizeof(float),cmpfunc);
+   qsort(InputArray, 50, sizeof(float),cmpfunc);
    return InputArray;
  }
 
@@ -32,6 +32,7 @@ MinMaxSMAOutput findMinMaxValueTemperatureFromBmsSender(float* inputArray){
   float* outputArray = MinMaxSortFunc(inputArray);
   for(int i=0;i<50;i++){
     cout<<outputArray[i]<<endl;
+    cout<<"inputArray " << inputArray[i]<<endl;
   }
   temperatureMinMaxSMAOutput.min = outputArray[0];
   temperatureMinMaxSMAOutput.max = outputArray[49];
