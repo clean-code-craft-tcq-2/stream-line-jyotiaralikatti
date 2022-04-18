@@ -7,6 +7,11 @@
 #include <fstream>
 using namespace std;
 #define MAX_BMS_READ 50
+typedef struct BMSPara{
+  float Temperature[300];
+  float Soc[300];
+  int status;
+}BMSParameters;
 
-int receiveBmsDataFromConsole();
+BMSParameters receiveBmsDataFromConsole();
 int processReceivedBmsStreamData();
