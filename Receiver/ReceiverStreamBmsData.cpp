@@ -1,20 +1,14 @@
 #include "ReceiverStreamBmsData.h"
 
-
-bool readSensorDataFromConsole()
-{    
-    return true;
-}
-
 BMSParameters receiveBmsDataFromConsole(){
   
   char dicardData[300];
   BMSParameters batteryParameters;
   float temperature[200];
   float SOC[200];
-  char unwanted[200];
-  for(int bufferIndex = 0; bufferIndex < 24; bufferIndex++){
-    cin >>unwanted >> temperature[bufferIndex] >> dicardData >> SOC[bufferIndex];   
+  //char unwanted[200];
+  for(int bufferIndex = 0; bufferIndex < 50; bufferIndex++){
+    cin >> temperature[bufferIndex] >> dicardData >> SOC[bufferIndex];   
     batteryParameters.Temperature[bufferIndex] = temperature[bufferIndex];
     batteryParameters.Soc[bufferIndex] = SOC[bufferIndex];     
    // scanf("%50s", dicardData);
@@ -36,7 +30,8 @@ int cmpfunc (const void * int_previousBufferElement, const void * int_currentBuf
 
  float* MinMaxSortFunc(float* InputArray)
  {
-   qsort(InputArray, 48, sizeof(float), cmpfunc);
+   sort (InputArray, InputArray+48)
+   //qsort(InputArray, 48, sizeof(float), cmpfunc);
    return InputArray;
  }
 
