@@ -36,6 +36,9 @@ static int intCompare(const void *previousBufferElement, const void *currentBuff
  }
 
 float findMinMaxValueTemperatureFromBmsSender(float* inputArray){
+  for(int i=0; i<6;i++){
+    printf("%f\n",&inputArray[i];
+           }
   MinMaxSortFunc(inputArray);
   return inputArray[0];
 }
