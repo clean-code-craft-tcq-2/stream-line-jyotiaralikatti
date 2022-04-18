@@ -30,36 +30,39 @@ int cmpfunc (const void * int_previousBufferElement, const void * int_currentBuf
    return InputArray;
  }
 
-float findMinMaxValueTemperatureFromBmsSender(float* inputArray){
-  
+MinMaxSMAOutput findMinMaxValueTemperatureFromBmsSender(float* inputArray){
+  MinMaxSMAOutput temperatureMinMaxSMAOutput;
   float* outputArray = MinMaxSortFunc(inputArray);
-  for(int i=0; i<24;i++){
-    printf("%f\n",outputArray[i]);
-           }
-  return outputArray[0];
+  temperatureMinMaxSMAOutput.min = outputArray[0];
+  temperatureMinMaxSMAOutput.max = outputArray[47];
+  return temperatureMinMaxSMAOutput;
 }
 
-float findMinMaxValueSocFromBmsSender(float* inputArray){
+MinMaxSMAOutput findMinMaxValueSocFromBmsSender(float* inputArray){
   float* outputArray = MinMaxSortFunc(inputArray);
-  return outputArray[0];
+  MinMaxSMAOutput SocMinMaxSMAOutput;
+  SocMinMaxSMAOutput.min = outputArray[0];
+  SocMinMaxSMAOutput.max = outputArray[47];
+  return SocMinMaxSMAOutput;
 }
 float findMovingAverageFromBmsData(float* inputArray){
   return 1;
 }
 
-void printToConsoleMinMaxAndMovingAverage(float min, float max, int movingAverage){
+void printToConsoleMinMaxAndMovingAverage(string parameter, float min, float max, int movingAverage){
   
-  cout << "Min Value is : " << min << " Max Value is : " << max <<" Moving Average is : " << movingAverage <<endl;
+  cout << parameter << "Min Value is : " << min << " Max Value is : " << max <<" Moving Average is : " << movingAverage <<endl;
 }
 
 int processReceivedBmsStreamData(){
   BMSParameters batterParam;
   
   batterParam = receiveBmsDataFromConsole();
-  float minTemp = findMinMaxValueTemperatureFromBmsSender((batterParam.Temperature));
-  float minSoc = findMinMaxValueSocFromBmsSender(batterParam.Soc);
- // char movingAverage = findMovingAverageFromBmsData(receiverBuffer);
-  printToConsoleMinMaxAndMovingAverage(minTemp, minSoc,1);
+  MinMaxSMAOutput Temp = findMinMaxValueTemperatureFromBmsSender((batterParam.Temperature));
+  MinMaxSMAOutput Soc = findMinMaxValueSocFromBmsSender(batterParam.Soc);
+ // MinMaxSMAOutput movingAverage = findMovingAverageFromBmsData(receiverBuffer);
+  printToConsoleMinMaxAndMovingAverage("Parameter : Temperature",Temp.min,Temp.max,1);
+  printToConsoleMinMaxAndMovingAverage("Parameter : SOC",Soc.min,Soc.max,1);
   return 1;
 }
 
