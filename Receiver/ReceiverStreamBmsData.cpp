@@ -13,7 +13,7 @@ BMSParameters receiveBmsDataFromConsole(){
     //printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
     }
   
-   printf("%f, %f\n",batteryParameters.Temperature[0],batteryParameters.Soc[0]);
+   printf("%f, %f\n",batteryParameters.Temperature[0]);//,batteryParameters.Soc[0]);
   batteryParameters.status = 1;
   return batteryParameters;
 }
@@ -33,7 +33,7 @@ MinMaxSMAOutput findMinMaxValueTemperatureFromBmsSender(float* inputArray){
   MinMaxSMAOutput temperatureMinMaxSMAOutput;
   
   float* outputArray = MinMaxSortFunc(inputArray);
- /* for(int i=0;i<50;i++){
+ /* for(int i=-25;i<25;i++){
     cout<<outputArray[i]<<endl;
   }*/
   temperatureMinMaxSMAOutput.min = outputArray[0];
