@@ -31,7 +31,7 @@ float findMovingAverageFromBmsData(float* inputArray, int arraySize){
   float SMAValue = 0.0;
   float sampleAdditionForSMA = 0.0;
   int noOfSamplesToBeAveraged = 5;
-   for (idx = 0; idx < 5; idx++)
+   for (int idx = 0; idx < 5; idx++)
     {
         sampleAdditionForSMA += inputArray[arraySize-idx-1];
     }
