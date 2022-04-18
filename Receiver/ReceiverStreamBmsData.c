@@ -1,15 +1,15 @@
 #include "ReceiverStreamBmsData.h"
-float Temperature[300];
-float Soc[300];
 
 
-int receiveBmsDataFromConsole(){
+BMSParameters receiveBmsDataFromConsole(){
   
   char dicardData[300];
+  BMSParameters batteryParameters;
   for(int bufferIndex = 0; bufferIndex < 6; bufferIndex++){
-    scanf("%f", &Temperature[bufferIndex]);     
+    scanf("%f", &batteryParameters.Temperature[bufferIndex]);     
     scanf("%50s", dicardData);
-    scanf("%f", &Soc[bufferIndex]);
+    scanf("%f", &batteryParameters.Soc[bufferIndex]);
+    batteryParameters.status =1;
     /*if(scanf("%50s", unusedData) == EOF) 
         {
             break;
@@ -17,7 +17,7 @@ int receiveBmsDataFromConsole(){
     printf("%f, %f\n",Temperature[bufferIndex],Soc[bufferIndex]);
     }
   
-  return 1;
+  return batteryParameters;
 }
 
 
@@ -54,10 +54,11 @@ void printToConsoleMinMaxAndMovingAverage(float min, float max, int movingAverag
 }
 
 int processReceivedBmsStreamData(){
+  BMSParameters batterParam;
   
-  int status = receiveBmsDataFromConsole();
-  float minTemp = findMinMaxValueTemperatureFromBmsSender(Temperature);
-  float minSoc = findMinMaxValueSocFromBmsSender(Soc);
+  batterParam = receiveBmsDataFromConsole();
+  float minTemp = findMinMaxValueTemperatureFromBmsSender(batterParam.Temperature);
+  float minSoc = findMinMaxValueSocFromBmsSender(batterParam.Soc);
  // char movingAverage = findMovingAverageFromBmsData(receiverBuffer);
   printToConsoleMinMaxAndMovingAverage(minTemp, minSoc,1);
   return 1;
