@@ -29,9 +29,7 @@ int cmpfunc (const void * int_previousBufferElement, const void * int_currentBuf
 
 MinMaxSMAOutput findMinMaxValueTemperatureFromBmsSender(float* inputArray){
   MinMaxSMAOutput temperatureMinMaxSMAOutput;
-   for(int i=0;i<50;i++){
-    cout<<"inputArray " << inputArray[i]<<endl;
-  }
+  
   float* outputArray = MinMaxSortFunc(inputArray);
   for(int i=0;i<50;i++){
     cout<<outputArray[i]<<endl;
@@ -61,7 +59,10 @@ int processReceivedBmsStreamData(){
   BMSParameters batterParam;
   
   batterParam = receiveBmsDataFromConsole();
-  MinMaxSMAOutput Temp = findMinMaxValueTemperatureFromBmsSender((batterParam.Temperature));
+   for(int i=0;i<50;i++){
+    cout<<"TempArray " << batterParam.Temperature[i]<<endl;
+  }
+  MinMaxSMAOutput Temp = findMinMaxValueTemperatureFromBmsSender(&(batterParam.Temperature[0]));
   MinMaxSMAOutput Soc = findMinMaxValueSocFromBmsSender(batterParam.Soc);
  // MinMaxSMAOutput movingAverage = findMovingAverageFromBmsData(receiverBuffer);
   printToConsoleMinMaxAndMovingAverage("Parameter : Temperature",Temp.min,Temp.max,1);
