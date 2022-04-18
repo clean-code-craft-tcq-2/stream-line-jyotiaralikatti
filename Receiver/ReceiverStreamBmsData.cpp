@@ -21,8 +21,9 @@ BMSParameters receiveBmsDataFromConsole(){
   BMSParameters batteryParameters;
   float temperature[200];
   float SOC[200];
+  char unwanted[200];
   for(int bufferIndex = 0; bufferIndex < 24; bufferIndex++){
-    cin >> temperature[bufferIndex] >> dicardData >> SOC[bufferIndex]);   
+    cin >>unwanted >> temperature[bufferIndex] >> dicardData >> SOC[bufferIndex];   
     (batteryParameters.Temperature[bufferIndex]) = temperature[bufferIndex];
     (batteryParameters.Soc[bufferIndex]) = SOC[bufferIndex]);     
    // scanf("%50s", dicardData);
