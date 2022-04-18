@@ -63,7 +63,7 @@ int processReceivedBmsStreamData(){
   for(int i=0; i<6;i++){
     printf("%f\n",(batterParam.Temperature[i]));
            }
-  float minTemp = findMinMaxValueTemperatureFromBmsSender(&(batterParam.Temperature[0]));
+  float minTemp = findMinMaxValueTemperatureFromBmsSender((batterParam.Temperature[0]));
   float minSoc = findMinMaxValueSocFromBmsSender(batterParam.Soc);
  // char movingAverage = findMovingAverageFromBmsData(receiverBuffer);
   printToConsoleMinMaxAndMovingAverage(minTemp, minSoc,1);
