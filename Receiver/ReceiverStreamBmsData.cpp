@@ -6,8 +6,8 @@ BMSParameters receiveBmsDataFromConsole(){
   BMSParameters batteryParameters;
   float temperature;
   float SOC;
-  for(int bufferIndex = 0; bufferIndex < 50; bufferIndex++){
-    cin >> temperature >> dicardData >> SOC >> endl;   
+  for(int bufferIndex = 0; bufferIndex < 25; bufferIndex++){
+    cin >> temperature >> dicardData >> SOC;   
     batteryParameters.Temperature[bufferIndex] = temperature;
     batteryParameters.Soc[bufferIndex] = SOC;     
     printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
