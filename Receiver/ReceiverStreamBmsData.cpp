@@ -10,8 +10,10 @@ BMSParameters receiveBmsDataFromConsole(){
     cin >> temperature >> dicardData >> SOC;   
     batteryParameters.Temperature[bufferIndex] = temperature;
     batteryParameters.Soc[bufferIndex] = SOC;     
-    printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
+    //printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
     }
+  
+   printf("%f, %f\n",batteryParameters.Temperature[0],batteryParameters.Soc[0]);
   batteryParameters.status = 1;
   return batteryParameters;
 }
@@ -31,9 +33,9 @@ MinMaxSMAOutput findMinMaxValueTemperatureFromBmsSender(float* inputArray){
   MinMaxSMAOutput temperatureMinMaxSMAOutput;
   
   float* outputArray = MinMaxSortFunc(inputArray);
-  for(int i=0;i<50;i++){
+ /* for(int i=0;i<50;i++){
     cout<<outputArray[i]<<endl;
-  }
+  }*/
   temperatureMinMaxSMAOutput.min = outputArray[0];
   temperatureMinMaxSMAOutput.max = outputArray[49];
   return temperatureMinMaxSMAOutput;
@@ -59,9 +61,9 @@ int processReceivedBmsStreamData(){
   BMSParameters batterParam;
   
   batterParam = receiveBmsDataFromConsole();
-   for(int i=0;i<50;i++){
+  /* for(int i=0;i<50;i++){
     cout<<"TempArray " << batterParam.Temperature[i]<<endl;
-  }
+  }*/
   MinMaxSMAOutput Temp = findMinMaxValueTemperatureFromBmsSender(&(batterParam.Temperature[0]));
   MinMaxSMAOutput Soc = findMinMaxValueSocFromBmsSender(batterParam.Soc);
  // MinMaxSMAOutput movingAverage = findMovingAverageFromBmsData(receiverBuffer);
