@@ -10,7 +10,7 @@ BMSParameters receiveBmsDataFromConsole(){
     cin >> temperature >> dicardData >> SOC;   
     batteryParameters.Temperature[bufferIndex] = temperature;
     batteryParameters.Soc[bufferIndex] = SOC;     
-    //printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
+    printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
     }
   batteryParameters.status = 1;
   return batteryParameters;
