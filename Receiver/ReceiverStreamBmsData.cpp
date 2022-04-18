@@ -31,7 +31,7 @@ MinMaxSMAOutput findMinMaxValueTemperatureFromBmsSender(float* inputArray){
   MinMaxSMAOutput temperatureMinMaxSMAOutput;
   float* outputArray = MinMaxSortFunc(inputArray);
   temperatureMinMaxSMAOutput.min = outputArray[0];
-  temperatureMinMaxSMAOutput.max = outputArray[47];
+  temperatureMinMaxSMAOutput.max = outputArray[49];
   return temperatureMinMaxSMAOutput;
 }
 
@@ -39,7 +39,7 @@ MinMaxSMAOutput findMinMaxValueSocFromBmsSender(float* inputArray){
   float* outputArray = MinMaxSortFunc(inputArray);
   MinMaxSMAOutput SocMinMaxSMAOutput;
   SocMinMaxSMAOutput.min = outputArray[0];
-  SocMinMaxSMAOutput.max = outputArray[47];
+  SocMinMaxSMAOutput.max = outputArray[49];
   return SocMinMaxSMAOutput;
 }
 float findMovingAverageFromBmsData(float* inputArray){
