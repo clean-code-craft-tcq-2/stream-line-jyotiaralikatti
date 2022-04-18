@@ -37,10 +37,11 @@ static int intCompare(const void *previousBufferElement, const void *currentBuff
  }
 
 float findMinMaxValueTemperatureFromBmsSender(float* inputArray){
-  for(int i=0; i<6;i++){
-    printf("%f\n",inputArray[i]);
-           }
+  
   float* outputArray = MinMaxSortFunc(inputArray);
+  for(int i=0; i<6;i++){
+    printf("%f\n",outputArray[i]);
+           }
   return outputArray[0];
 }
 
@@ -61,9 +62,6 @@ int processReceivedBmsStreamData(){
   BMSParameters batterParam;
   
   batterParam = receiveBmsDataFromConsole();
-  for(int i=0; i<6;i++){
-    printf("%f\n",(batterParam.Temperature[i]));
-           }
   float minTemp = findMinMaxValueTemperatureFromBmsSender((batterParam.Temperature));
   float minSoc = findMinMaxValueSocFromBmsSender(batterParam.Soc);
  // char movingAverage = findMovingAverageFromBmsData(receiverBuffer);
