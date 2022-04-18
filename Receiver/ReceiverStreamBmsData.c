@@ -14,7 +14,7 @@ BMSParameters receiveBmsDataFromConsole(){
         {
             break;
         } */
-    printf("%f, %f\n",Temperature[bufferIndex],Soc[bufferIndex]);
+    printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
     }
   
   return batteryParameters;
