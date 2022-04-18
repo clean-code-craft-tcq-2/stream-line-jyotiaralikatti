@@ -10,8 +10,8 @@
 using namespace std;
 #define MAX_BMS_READ 50
 typedef struct BMSPara{
-  float Temperature[300];
-  float Soc[300];
+  float Temperature[50];
+  float Soc[50];
   int status;
 }BMSParameters;
 
