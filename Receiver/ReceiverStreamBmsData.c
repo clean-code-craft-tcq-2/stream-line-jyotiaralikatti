@@ -20,19 +20,13 @@ BMSParameters receiveBmsDataFromConsole(){
   return batteryParameters;
 }
 
-
-static int intCompare(const void *previousBufferElement, const void *currentBufferElement)
-{
-    float int_previousBufferElement = * ( (float*) previousBufferElement );
-    float int_currentBufferElement = * ( (float*) currentBufferElement );
-
-    if ( int_previousBufferElement == int_currentBufferElement ) return 0;
-    else if ( int_previousBufferElement < int_currentBufferElement ) return -1;
-    else return 1;
+int cmpfunc (const void * int_previousBufferElement, const void * int_currentBufferElement) {
+   return ( *(int*)int_previousBufferElement - *(int*)int_currentBufferElement );
 }
+
  float* MinMaxSortFunc(float* InputArray)
  {
-   qsort(InputArray, 50, sizeof(float), intCompare);
+   qsort(InputArray, 50, sizeof(float), cmpfunc);
    return InputArray;
  }
 
