@@ -30,22 +30,23 @@ static int intCompare(const void *previousBufferElement, const void *currentBuff
     else if ( int_previousBufferElement < int_currentBufferElement ) return -1;
     else return 1;
 }
- void MinMaxSortFunc(float* InputArray)
+ float* MinMaxSortFunc(float* InputArray)
  {
    qsort(InputArray, 50, sizeof(float), intCompare);
+   return InputArray;
  }
 
 float findMinMaxValueTemperatureFromBmsSender(float* inputArray){
   for(int i=0; i<6;i++){
-    printf("%f\n",&inputArray[i]);
+    printf("%f\n",inputArray[i]);
            }
-  MinMaxSortFunc(inputArray);
-  return inputArray[0];
+  float* outputArray = MinMaxSortFunc(inputArray);
+  return outputArray[0];
 }
 
 float findMinMaxValueSocFromBmsSender(float* inputArray){
-  MinMaxSortFunc(inputArray);
-  return inputArray[0];
+  float* outputArray = MinMaxSortFunc(inputArray);
+  return outputArray[0];
 }
 float findMovingAverageFromBmsData(float* inputArray){
   return 1;
@@ -63,7 +64,7 @@ int processReceivedBmsStreamData(){
   for(int i=0; i<6;i++){
     printf("%f\n",(batterParam.Temperature[i]));
            }
-  float minTemp = findMinMaxValueTemperatureFromBmsSender((batterParam.Temperature[0]));
+  float minTemp = findMinMaxValueTemperatureFromBmsSender((batterParam.Temperature));
   float minSoc = findMinMaxValueSocFromBmsSender(batterParam.Soc);
  // char movingAverage = findMovingAverageFromBmsData(receiverBuffer);
   printToConsoleMinMaxAndMovingAverage(minTemp, minSoc,1);
