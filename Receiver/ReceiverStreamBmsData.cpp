@@ -10,8 +10,7 @@ BMSParameters receiveBmsDataFromConsole(){
   for(int bufferIndex = 0; bufferIndex < MAX_BMS_READ ; bufferIndex++){
     cin >> temperature >> dicardData >> SOC;   
     batteryParameters.Temperature[bufferIndex] = temperature;
-    batteryParameters.Soc[bufferIndex] = SOC;   
-    //printf("%f, %f\n",batteryParameters.Temperature[bufferIndex],batteryParameters.Soc[bufferIndex]);
+    batteryParameters.Soc[bufferIndex] = SOC;
     }
   batteryParameters.status = 1;
   return batteryParameters;
@@ -70,6 +69,6 @@ int processReceivedBmsStreamData(){
   MinMaxSMAOutput Soc = findMinMaxValueSocFromBmsSender(batterParam.Soc);
   printToConsoleMinMaxAndMovingAverage("Parameter : Temperature : ", Temp.min, Temp.max, Temp.SMA);
   printToConsoleMinMaxAndMovingAverage("Parameter : SOC : ", Soc.min, Soc.max, Soc.SMA);
-  return 1;
+  return batterParam.status;
 }
 
